@@ -1,3 +1,4 @@
+import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 
 export default function OrderDetails () {
@@ -5,6 +6,7 @@ export default function OrderDetails () {
         <>
         <Header />
         <h1>Order Details Page</h1>
+        <Footer />
         </>
     )
 }
