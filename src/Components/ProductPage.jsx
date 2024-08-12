@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import getProducts from "../helpers/ProductAPI";
+import Header from "./Header";
+import Footer from "./Footer";
 export default function ProductPage() {
 	const [product, setProduct] = useState([]);
 	const params = useParams();
@@ -8,27 +10,29 @@ export default function ProductPage() {
 	useEffect(() => {
 		const productData = async () => {
 			try {
-				const productDetails = await getProducts("", `${params.id}`);
+				const productDetails = await getProducts("","", `${params.id}`);
 				setProduct(productDetails);
 			} catch (err) {
 				console.error(err);
 			}
 		};
 		productData();
-		console.log(product);
+			
 	}, []);
-
+	
 	return (
 		<>
-			<h1>{product[0].title}</h1>
+		<Header />
+			<h1></h1>
 			<div className="container">
 				<div className="single-product-wrapper">
-					<div className="single-product-description">{product[0].description}</div>
+					<div className="single-product-description">{product.description}</div>
 					<div className="single-product-image-wrapper">
-						<img src={product[0].image} alt="" />
+						<img src= ""alt="" />
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 }

@@ -11,7 +11,7 @@ function App() {
   useEffect(() =>{
    const productData = async () => {
     try {
-       const retreiveProducts =  await getProducts("","3")
+       const retreiveProducts =  await getProducts("","3","")
        setProducts(retreiveProducts)
     } catch(err){
       console.error(err)
