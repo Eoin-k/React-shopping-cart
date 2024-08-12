@@ -4,7 +4,7 @@ import HomeHero from './Components/Home-Hero';
 import Footer from './Components/Footer';
 import { useEffect, useState } from 'react';
 import getProducts from './helpers/ProductAPI';
-import HomeProductGrid from './Components/HompageProductGrid';
+import ProductGrid from './Components/ProductGrid';
 function App() {
   const[listProducts, setProducts] = useState([])
 
@@ -24,7 +24,7 @@ function App() {
     <>
       <Header />
       <HomeHero />
-      <HomeProductGrid products={listProducts} />
+      <ProductGrid products={listProducts} />
       <Footer />
     </>
   )
