@@ -1,21 +1,22 @@
-import { Link } from "react-router-dom";
+import ProductCard from "./ProductCard";
 
-export default function ProductGrid({products}) {
-    return(
-        <>
-        <div className="container">
-            <div className="cards-wrapper-inner">
-                {products.map(product => (
-                    <div key={product.id}>
-                        <div className="product-image-wrapper">
-                            <img className="product-image" src={product.image} alt="" />
-                        </div>
-                       <Link to={`/product/${product.id}`}><h4>{product.title}</h4></Link>
-                        <p>{product.description}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-        </>
-    )
+export default function ProductGrid({ products }) {
+	return (
+		<>
+			<div className="container">
+				<div className="cards-wrapper-inner">
+					{products.map((product) => (
+						<ProductCard
+							product={product}
+							key={product.id}
+							id={product.id}
+							title={product.title}
+							image={product.image}
+							description={product.description}
+						/>
+					))}
+				</div>
+			</div>
+		</>
+	);
 }

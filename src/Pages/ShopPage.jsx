@@ -3,7 +3,6 @@ import Header from "../Components/Header";
 import { useEffect, useState } from "react";
 import getProducts from "../helpers/ProductAPI";
 import ProductGrid from "../Components/ProductGrid";
-import { Outlet } from "react-router-dom";
 
 export default function ShopPage() {
 	const [listProducts, setProducts] = useState([]);
