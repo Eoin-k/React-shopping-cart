@@ -11,7 +11,7 @@ export default function ShopPage() {
 		const productData = async () => {
 			try {
 				// function params left blank to retreive all products
-				const retreiveProducts = await getProducts("", "","");
+				const retreiveProducts = await getProducts("", "", "");
 				setProducts(retreiveProducts);
 			} catch (err) {
 				console.error(err);
@@ -23,8 +23,12 @@ export default function ShopPage() {
 	return (
 		<>
 			<Header />
-			<h1>Shop Page</h1>
-			<p>Check out all our products below</p>
+			<div className="container">
+				<div className="shop-intro">
+					<h1>Shop Page</h1>
+					<p>Check out all our products below</p>
+				</div>
+			</div>
 			<ProductGrid products={listProducts} />
 			<Footer />
 		</>

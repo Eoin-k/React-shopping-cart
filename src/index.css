@@ -5,6 +5,10 @@
 	flex: 1;
 }
 
+body {
+	font-family: "Outfit";
+}
+
 img {
 	width: 100%;
 	object-fit: cover;
@@ -147,4 +151,62 @@ nav > ul {
 .checkout-btn {
 	padding: 0.75rem;
 	background-color: antiquewhite;
+}
+
+.checkout-message {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: center;
+	place-items: center;
+}
+.checkout-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 80vh;
+}
+
+.checkout-cart-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.checkout-cart-item {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	border: 1px solid black;
+	padding: 0.5rem;
+	border-radius: 1em;
+}
+
+.checkout-cart-image {
+	width: 10rem;
+	height: 15rem;
+	object-fit: cover;
+	aspect-ratio: 1;
+}
+
+.item-info {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	margin-left: 2rem;
+}
+
+.item-description {
+	max-width: 30ch;
+}
+
+.purchase-btn {
+	max-width: 150px;
+	padding-inline: 2rem;
+	padding-block: 1rem;
+	background-color: green;
+	color: white;
+	align-self: center;
+	margin-top: 2rem;
 }

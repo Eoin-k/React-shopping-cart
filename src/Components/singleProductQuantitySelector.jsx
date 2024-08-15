@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../helpers/cartContext";
 export default function SingleQuantitySelector({ passedFunction, product }) {
 	const [value, setValue] = useState(1);
-	const { addToCart, removeFromCart } = useContext(CartContext);
+	const { addToCart } = useContext(CartContext);
 	if (passedFunction === undefined) {
 		passedFunction = console.log("hi");
 	}
