@@ -16,6 +16,7 @@ export const CartProvider = ({ children }) => {
 		if (productPosition !== undefined) {
 			const arrayPosition = cartItems.indexOf(productPosition);
 			cartItems[arrayPosition].quantity += product.quantity;
+			cartItems.current = cartItems;
 		} else {
 			setCartItems([...cartItems, product]);
 			cartItems.current = cartItems;
@@ -24,8 +25,14 @@ export const CartProvider = ({ children }) => {
 	};
 
 	const removeFromCart = (product) => {
-		const amendedCart = cartItems.filter((item) => item.id !== product.id);
-		setCartItems(amendedCart);
+		const productPosition = cartItems.find(
+			(cartProduct) => product.id === cartProduct.id,
+		);
+		const arrayPosition = cartItems.indexOf(productPosition);
+		cartItems.splice(arrayPosition, 1);
+		setCartItems([...cartItems]);
+		cartItems.current = cartItems;
+		console.log(cartItems);
 	};
 
 	return (

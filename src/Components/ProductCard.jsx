@@ -14,6 +14,9 @@ export default function ProductCard({ product }) {
 					<p>{product.description}</p>
 				</div>
 				<QuantitySelector product={product} />
+				<Link to={`/product/${product.id}`}>
+					<button className="btn-primary">View Product</button>
+				</Link>
 			</div>
 		</>
 	);
