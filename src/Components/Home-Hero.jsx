@@ -16,7 +16,7 @@ export default function HomeHero() {
 						<div className="hero-media-wrapper">
 							<img
 								className="hero-image"
-								src="..//src/assets/storePhoto.jpg"
+								src="src/assets/storePhoto.jpg"
 								alt=""
 							/>
 						</div>

@@ -23,7 +23,7 @@ export default function Header() {
 								<i onClick={() => setCartDisplay(!showcart)}>
 									<img
 										className="cart-icon"
-										src="/src/assets/shopping-cart-outline-svgrepo-com.svg"
+										src="src/assets/shopping-cart-outline-svgrepo-com.svg"
 										alt=""
 									/>
 									{cartItems.length !== 0 ? (
