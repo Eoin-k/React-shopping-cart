@@ -14,11 +14,7 @@ export default function HomeHero() {
 							</Link>
 						</div>
 						<div className="hero-media-wrapper">
-							<img
-								className="hero-image"
-								src="src/assets/storePhoto.jpg"
-								alt=""
-							/>
+							<img className="hero-image" src="/images/storePhoto.jpg" alt="" />
 						</div>
 					</div>
 				</div>
