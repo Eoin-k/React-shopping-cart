@@ -22,7 +22,7 @@ export default function OrderDetails() {
 						delivery information below
 					</h2>
 					{orderItems.map((item) => (
-						<div key={item} className="checkout-cart-item">
+						<div key={item.id} className="checkout-cart-item">
 							<img className="checkout-cart-image" src={item.image} alt="" />
 							<div className="item-info">
 								<div className="name-description-wrapper">
@@ -37,6 +37,17 @@ export default function OrderDetails() {
 							</div>
 						</div>
 					))}
+					<div className="order-total">
+						<h4>
+							Your total order value: ${" "}
+							{orderItems
+								.reduce(
+									(acc, currVal) => acc + currVal.quantity * currVal.price,
+									0,
+								)
+								.toFixed(2)}
+						</h4>
+					</div>
 					<div className="delivery-info">
 						<h3>Delivery Details:</h3>
 						<p>Your order is expected to ship within 3 working days</p>

@@ -19,12 +19,11 @@ export default function ProductPage() {
 			}
 		};
 		productData();
-		setQuantityCost(product.price);
 	}, []);
 
 	function QuantityTotalCost(quant) {
 		const QuantityCost = quant * product.price;
-		return setQuantityCost(QuantityCost);
+		setQuantityCost(QuantityCost);
 	}
 
 	return (
@@ -34,7 +33,7 @@ export default function ProductPage() {
 			<div className="container">
 				<div className="single-product-wrapper">
 					<div className="single-product-image-wrapper">
-						<img src={product.image} alt="" />
+						<img className="single-product-image" src={product.image} alt="" />
 					</div>
 					<div className="single-product-description">
 						<h3>{product.title}</h3>

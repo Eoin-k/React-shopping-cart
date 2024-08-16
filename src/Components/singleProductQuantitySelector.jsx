@@ -3,9 +3,6 @@ import { CartContext } from "../helpers/cartContext";
 export default function SingleQuantitySelector({ passedFunction, product }) {
 	const [value, setValue] = useState(1);
 	const { addToCart } = useContext(CartContext);
-	if (passedFunction === undefined) {
-		passedFunction = console.log("hi");
-	}
 
 	function decrementInput() {
 		if (value === 1) {
@@ -14,14 +11,12 @@ export default function SingleQuantitySelector({ passedFunction, product }) {
 			let newVal = Number(value) - 1;
 			setValue(newVal);
 			passedFunction(newVal);
-			console.log(value, "dec");
 		}
 	}
 	function IncrementInput() {
 		let newVal = Number(value) + 1;
 		setValue(newVal);
 		passedFunction(newVal);
-		console.log(value, "inc");
 	}
 
 	passedFunction(value);
@@ -39,7 +34,9 @@ export default function SingleQuantitySelector({ passedFunction, product }) {
 					+
 				</button>
 			</div>
-			<button onClick={() => addToCart(product)}>Add to cart</button>
+			<button className="add-to-cart-btn" onClick={() => addToCart(product)}>
+				Add to cart
+			</button>
 		</div>
 	);
 }

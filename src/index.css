@@ -7,15 +7,48 @@
 
 body {
 	font-family: "Outfit";
+	color: white;
+	background-color: rgb(2, 4, 60);
 }
 
 img {
-	width: 100%;
 	object-fit: cover;
+	border-radius: 1em;
+	overflow: hidden;
+}
+
+button {
+	cursor: pointer;
+}
+
+.hero-image {
+	width: 100%;
+}
+
+a {
+	color: #fefefe;
+	font-size: 1.3rem;
+}
+
+a:visited {
+	color: #fefefe;
+}
+
+li > a:visited {
+	color: black;
+}
+
+li {
+	list-style: none;
+	font-size: 1.5rem;
 }
 
 section {
 	padding-block: 3rem;
+}
+
+.logo-wrapper {
+	align-content: center;
 }
 
 .footer-outer-wrapper {
@@ -25,10 +58,18 @@ section {
 	padding-block: 3rem;
 }
 
+.footer-inner-wrapper {
+	padding: 2rem;
+	color: black;
+	background-color: #fefefe;
+	border-radius: 1em;
+}
+
 .cards-wrapper-inner {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 	gap: 1rem;
+	align-items: stretch;
 }
 
 .product-image-wrapper {
@@ -41,6 +82,50 @@ section {
 	width: 100%;
 	max-height: 20rem;
 	aspect-ratio: 1;
+}
+
+.single-product-image {
+	max-width: 50rem;
+	max-height: 40rem;
+	border-radius: 1em;
+	overflow: hidden;
+}
+
+.product-card-footer {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	max-width: 150px;
+}
+
+.product-card-wrapper {
+	align-items: stretch;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	border: 1px solid #fefefe;
+	padding: 0.75rem;
+	border-radius: 1em;
+}
+
+.add-to-cart-btn {
+	background-color: green;
+	color: white;
+	padding-inline: 1em;
+	padding-block: 0.5em;
+	border-radius: 1em;
+	border: 2px solid white;
+}
+
+.btn-primary {
+	background-color: orange;
+	margin-top: auto;
+	color: white;
+	padding-inline: 1em;
+	padding-block: 0.5em;
+	border-radius: 1em;
+	border: 2px solid white;
+	margin-top: 1rem;
 }
 
 .container {
@@ -76,6 +161,9 @@ section {
 .header-wrapper {
 	display: flex;
 	justify-content: space-between;
+	border-radius: 1em;
+	padding: 1rem;
+	background-color: #fefefe;
 }
 
 nav > ul {
@@ -88,6 +176,25 @@ nav > ul {
 .nav {
 	position: relative;
 }
+input {
+	background-color: transparent;
+	color: #fefefe;
+	border: none;
+	text-align: center;
+	max-width: 1rem;
+	font-size: 1.2rem;
+}
+
+.input-wrapper {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+}
+
+.input-button {
+	padding-inline: 0.75rem;
+	padding-block: 0.5rem;
+}
 
 .cart-icon {
 	width: 2rem;
@@ -99,7 +206,7 @@ nav > ul {
 	position: absolute;
 	top: 2rem;
 	right: 0;
-	background-color: rgb(252, 252, 252);
+	background-color: rgb(1, 5, 102);
 	border-radius: 1em;
 	padding: 1rem;
 	border: 1px solid black;
@@ -108,11 +215,12 @@ nav > ul {
 .cart-count {
 	position: absolute;
 	top: -1.5rem;
-	right: -2rem;
+	right: 2.2rem;
 	color: white;
 	background-color: red;
 	border-radius: 50%;
-	padding-inline: 0.5rem;
+	padding-inline: 0.6rem;
+	padding-block: 0.3rem;
 }
 
 .cart-inner {
@@ -177,8 +285,8 @@ nav > ul {
 	flex-direction: row;
 	width: 100%;
 	justify-content: space-between;
-	border: 1px solid black;
-	padding: 0.5rem;
+	border: 1px solid #fefefe;
+	padding: 1rem;
 	border-radius: 1em;
 }
 

@@ -23,7 +23,7 @@ export default function Checkout() {
 					<div className="checkout-cart-container">
 						<h2>Cart items</h2>
 						{cartItems.map((item) => (
-							<div key={item} className="checkout-cart-item">
+							<div key={item.id} className="checkout-cart-item">
 								<img className="checkout-cart-image" src={item.image} alt="" />
 								<div className="item-info">
 									<div className="name-description-wrapper">

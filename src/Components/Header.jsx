@@ -35,25 +35,29 @@ export default function Header() {
 							{showcart ? (
 								<div className="cart-wrapper">
 									<h3 className="cart-header">Cart</h3>
-									<div className="cart-inner">
-										{cartItems.map((item) => (
-											<div key={item} className="cart-item">
-												<img className="cart-image" src={item.image} alt="" />
-												<h4>{item.title}</h4>
-												<p>${item.price}</p>
-												<div className="quantity-total-wrapper">
-													<p>Quantity: {item.quantity}</p>
-													<p>Item Total: ${item.quantity * item.price}</p>
+									{cartItems.length !== 0 ? (
+										<div className="cart-inner">
+											{cartItems.map((item) => (
+												<div key={item.id} className="cart-item">
+													<img className="cart-image" src={item.image} alt="" />
+													<h4>{item.title}</h4>
+													<p>${item.price}</p>
+													<div className="quantity-total-wrapper">
+														<p>Quantity: {item.quantity}</p>
+														<p>Item Total: ${item.quantity * item.price}</p>
+													</div>
+													<button
+														onClick={removeFromCart}
+														className="remove-item"
+													>
+														Remove
+													</button>
 												</div>
-												<button
-													onClick={removeFromCart}
-													className="remove-item"
-												>
-													Remove
-												</button>
-											</div>
-										))}
-									</div>
+											))}
+										</div>
+									) : (
+										<p>Oops Looks like your cart is empty</p>
+									)}
 									<div>
 										<p className="cart-total">
 											Cart Total: $
@@ -65,9 +69,11 @@ export default function Header() {
 												)
 												.toFixed(2)}
 										</p>
-										<Link to="/checkout">
-											<button className="checkout-btn">Go To Checkout</button>
-										</Link>
+										{cartItems.length !== 0 ? (
+											<Link to="/checkout">
+												<button className="checkout-btn">Go To Checkout</button>
+											</Link>
+										) : null}
 									</div>
 								</div>
 							) : null}

@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
 		const productPosition = cartItems.find(
 			(cartProduct) => product.id === cartProduct.id,
 		);
-		console.log(productPosition);
+
 		if (productPosition !== undefined) {
 			const arrayPosition = cartItems.indexOf(productPosition);
 			cartItems[arrayPosition].quantity += product.quantity;
@@ -20,7 +20,6 @@ export const CartProvider = ({ children }) => {
 		} else {
 			setCartItems([...cartItems, product]);
 			cartItems.current = cartItems;
-			console.log(cartItems);
 		}
 	};
 
@@ -32,7 +31,6 @@ export const CartProvider = ({ children }) => {
 		cartItems.splice(arrayPosition, 1);
 		setCartItems([...cartItems]);
 		cartItems.current = cartItems;
-		console.log(cartItems);
 	};
 
 	return (

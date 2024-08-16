@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../helpers/cartContext";
 export default function QuantitySelector({ product }) {
 	const [value, setValue] = useState(1);
-	const { addToCart, removeFromCart } = useContext(CartContext);
+	const { addToCart } = useContext(CartContext);
 
 	function decrementInput() {
 		if (value === 1) {
@@ -10,13 +10,11 @@ export default function QuantitySelector({ product }) {
 		} else {
 			let newVal = Number(value) - 1;
 			setValue(newVal);
-			console.log(value, "dec");
 		}
 	}
 	function IncrementInput() {
 		let newVal = Number(value) + 1;
 		setValue(newVal);
-		console.log(value, "inc");
 	}
 	product = { ...product, quantity: value };
 
@@ -31,7 +29,9 @@ export default function QuantitySelector({ product }) {
 					+
 				</button>
 			</div>
-			<button onClick={() => addToCart(product)}>Add to cart</button>
+			<button className="add-to-cart-btn" onClick={() => addToCart(product)}>
+				Add to cart
+			</button>
 		</div>
 	);
 }
